@@ -1,7 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import 'lodash';
 
 function App() {
+    
+  var _ = require('lodash');
+
+  const sampleArray = _.range(11);
+
+  console.log(sampleArray);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -23,3 +31,8 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
