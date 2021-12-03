@@ -15,6 +15,22 @@ let cuantiti = 0
 categoriaProductos.forEach(item => { cuantiti = cuantiti + item.price });
 console.log(cuantiti);
 
+const nombre = {};
+nombre.pepe = "pepe";
+console.log(nombre);
+
+nombre.frutas = ["manzana", "banana"];
+console.log(nombre);
+
+nombre.producto = [{nombre: "felipe"}, {apellido: "ramos"}]
+console.log(nombre);
+
+var keyName = "pizzas"
+nombre[keyName] = "cualquier";
+console.log(nombre);
+
+//const newObject = {};
+
 
 const myFunction = (name) => {console.log(name)}
 myFunction("felipe");
@@ -29,7 +45,7 @@ const listaImpresa = lista.map((item) => <li key={item.id}>{item.name}</li>);
 //Happy hour => total
 //status, cuantos estas activos o no?
 //cuantos productos valen mas o menos de $500
-//CUantos productos tienen al menos un grupo de opciones.
+//Cuantos productos tienen al menos un grupo de opciones.
 
 
   return (
