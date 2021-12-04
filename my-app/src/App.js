@@ -7,19 +7,16 @@ function App() {
 
 var _ = require('lodash');
 const productos = require('./products.json');
-const categoriaProductos = productos.results
-let cuantiti = 0
+const categoriaProductos = productos.results;
 
 //categorias
-//Suma de productos (precios)
+//Suma de precios de los productos
+let cuantiti = 0
 categoriaProductos.forEach(item => { cuantiti = cuantiti + item.price });
-console.log(cuantiti);
+//console.log(cuantiti);
 
-const nombre = {};
+/* const nombre = {};
 nombre.pepe = "pepe";
-console.log(nombre);
-
-nombre.frutas = ["manzana", "banana"];
 console.log(nombre);
 
 nombre.producto = [{nombre: "felipe"}, {apellido: "ramos"}]
@@ -27,19 +24,33 @@ console.log(nombre);
 
 var keyName = "pizzas"
 nombre[keyName] = "cualquier";
-console.log(nombre);
+console.log(nombre);*/
 
-//const newObject = {};
-
-
-const myFunction = (name) => {console.log(name)}
-myFunction("felipe");
 
 //mapeo de categorias
 var lista = _.map(categoriaProductos, categoriaProductos.name);
 
 //impresion de categorias
 const listaImpresa = lista.map((item) => <li key={item.id}>{item.name}</li>);
+
+//Guardar categorias en un array
+
+function guardarCategorias(data) {
+  var categorias = [];
+  data.forEach(item => {
+    if (!categorias.includes(item.categoriaProducto.name)) {
+      categorias.push(item.categoriaProducto.name);
+    }
+  });
+  return console.log(categorias);
+}
+const categoriasOrdenadas = guardarCategorias(lista);
+
+const Objeto = {};
+
+const nuevoObjeto = Objeto.categoriasOrdenadas;
+
+console.log(nuevoObjeto);
 
 //Cuantos porductos de cocina y cuantos de bar??? grab_for
 //Happy hour => total
@@ -53,9 +64,9 @@ const listaImpresa = lista.map((item) => <li key={item.id}>{item.name}</li>);
       <h1>Ejercicio JSON, abrir consola</h1>
       Ingrese una categoria
     <input type="text" name="categoriaProduct"/>
-    <ul>
+    <ol>
       { listaImpresa }
-    </ul>
+    </ol>
     </React.Fragment>
   );
 }
