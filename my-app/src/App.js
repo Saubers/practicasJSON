@@ -24,7 +24,7 @@ console.log(nombre);
 
 var keyName = "pizzas"
 nombre[keyName] = "cualquier";
-console.log(nombre);*/
+console.log(nombre); */
 
 
 //mapeo de categorias
@@ -43,13 +43,13 @@ function guardarCategorias(data) {
   return categorias;
 }
 const categoriasOrdenadas = guardarCategorias(lista);
-console.log(categoriasOrdenadas);
 
 //impresion de categorias
 const listaRenderisada = categoriasOrdenadas.map((item) => <li key={item} >{ item }</li>);
 
-
-/* const Objeto  */
+//Pasaje del array de categorias a un objeto
+const objeto = Object.assign({}, categoriasOrdenadas);
+console.log(objeto);
 
 //Cuantos porductos de cocina y cuantos de bar??? grab_for
 //Happy hour => total
