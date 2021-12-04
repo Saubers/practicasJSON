@@ -51,6 +51,12 @@ const listaRenderisada = categoriasOrdenadas.map((item) => <li key={item} >{ ite
 const objeto = Object.assign({}, categoriasOrdenadas);
 console.log(objeto);
 
+//Itero sobre el objeto
+
+for(const propiedad in objeto) {
+  console.log(`${propiedad}: ${objeto[propiedad]}`);
+}
+
 //Cuantos porductos de cocina y cuantos de bar??? grab_for
 //Happy hour => total
 //status, cuantos estas activos o no?
