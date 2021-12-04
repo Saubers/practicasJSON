@@ -30,8 +30,6 @@ console.log(nombre);*/
 //mapeo de categorias
 var lista = _.map(categoriaProductos, categoriaProductos.name);
 
-//impresion de categorias
-const listaImpresa = lista.map((item) => <li key={item.id}>{item.name}</li>);
 
 //Guardar categorias en un array
 
@@ -42,15 +40,16 @@ function guardarCategorias(data) {
       categorias.push(item.categoriaProducto.name);
     }
   });
-  return console.log(categorias);
+  return categorias;
 }
 const categoriasOrdenadas = guardarCategorias(lista);
+console.log(categoriasOrdenadas);
 
-const Objeto = {};
+//impresion de categorias
+const listaRenderisada = categoriasOrdenadas.map((item) => <li key={item} >{ item }</li>);
 
-const nuevoObjeto = Objeto.categoriasOrdenadas;
 
-console.log(nuevoObjeto);
+/* const Objeto  */
 
 //Cuantos porductos de cocina y cuantos de bar??? grab_for
 //Happy hour => total
@@ -64,8 +63,9 @@ console.log(nuevoObjeto);
       <h1>Ejercicio JSON, abrir consola</h1>
       Ingrese una categoria
     <input type="text" name="categoriaProduct"/>
+    <h3>Categorias disponibles:</h3>
     <ol>
-      { listaImpresa }
+      { listaRenderisada }
     </ol>
     </React.Fragment>
   );
