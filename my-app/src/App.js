@@ -2,10 +2,10 @@ import './App.css';
 import React from 'react';
 //import { products } from './products.json';
 //import { useState, useEffect } from 'react'
+const _ = require('lodash');
 
 function App() {
 
-var _ = require('lodash');
 const productos = require('./products.json');
 const categoriaProductos = productos.results;
 
