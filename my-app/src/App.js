@@ -9,7 +9,12 @@ const categoriaProductos = productos.results;
 
 console.log(index(categoriaProductos));
 
-
+const api_url = 'https://api.fudex.com.ar/api/locales/local/186';
+fetch(`${api_url}/producto`)
+  .then((response) => response.json())
+  .then((producto) => {
+    console.log(producto)
+  })
 
 /* //Suma de precios de los productos
 let cuantiti = 0
