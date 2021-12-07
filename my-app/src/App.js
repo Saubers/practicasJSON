@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import { index } from './utils/index'
+import axios from 'axios';
 
 function App() {
 
@@ -9,12 +10,24 @@ const categoriaProductos = productos.results;
 
 console.log(index(categoriaProductos));
 
-const api_url = 'https://api.fudex.com.ar/api/locales/local/186';
+//consumiendo de api con axios
+
+axios({
+  method: 'get',
+  url: 'https://api.fudex.com.ar/api/locales/local/186/producto'
+}).then(function(response){
+  console.log(response);
+})
+
+
+//consumiendo api con fetch
+
+/* const api_url = 'https://api.fudex.com.ar/api/locales/local/186';
 fetch(`${api_url}/producto`)
   .then((response) => response.json())
   .then((producto) => {
     console.log(producto)
-  })
+  }) */
 
 /* //Suma de precios de los productos
 let cuantiti = 0
