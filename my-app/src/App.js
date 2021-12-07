@@ -1,7 +1,5 @@
 import './App.css';
 import React from 'react';
-//import { products } from './products.json';
-//import { useState, useEffect } from 'react'
 const _ = require('lodash');
 
 function App() {
@@ -9,28 +7,17 @@ function App() {
 const productos = require('./products.json');
 const categoriaProductos = productos.results;
 
-//categorias
-//Suma de precios de los productos
+console.log(miFuncion(categoriaProductos));
+
+
+
+/* //Suma de precios de los productos
 let cuantiti = 0
 categoriaProductos.forEach(item => { cuantiti = cuantiti + item.price });
 console.log(`El precio total de los productos es: ${cuantiti}`);
 
-/* const nombre = {};
-nombre.pepe = "pepe";
-console.log(nombre);
-
-nombre.producto = [{nombre: "felipe"}, {apellido: "ramos"}]
-console.log(nombre);
-
-var keyName = "pizzas"
-nombre[keyName] = "cualquier";
-console.log(nombre); */
-
-
 //mapeo de categorias
 var lista = _.map(categoriaProductos, categoriaProductos.name);
-
-
 
 //Guardar categorias en un array
 
@@ -45,33 +32,17 @@ function guardarCategorias(data) {
 }
 const categoriasOrdenadas = guardarCategorias(lista);
 
+//objeto de categorias
+const felipe = {};
+categoriasOrdenadas.forEach(item => { felipe[item] = categoriaProductos.filter( item2 => item2.categoriaProducto.name === item)});
+console.log(felipe)
+
 //impresion de categorias
 const listaRenderisada = categoriasOrdenadas.map((item) => <li key={item} >{ item }</li>);
 
 //Pasaje del array de categorias a un objeto
 const objeto = Object.assign({}, categoriasOrdenadas);
-
-//Itero sobre el objeto
-
-for(const propiedad in objeto) {
-  console.log(`${propiedad}: ${objeto[propiedad]}`);
-}
-
-/* console.log(objeto);
-console.log(lista); */
-//nombre de la categoria
-const nombreCategoria = lista.map(item => item.categoriaProducto.name);
-function newJson (){
-  lista.forEach(() => {
-    if(nombreCategoria === "Entradas" || nombreCategoria === "Postres" || nombreCategoria === "Combos  - Premium"){
-      console.log("encontrados")
-    } else {
-      console.log("no entra")
-    }
-})}
-
-newJson();
-
+console.log(objeto);
 
 //Cuantos porductos de cocina y cuantos de bar??? grab_for
 
@@ -107,7 +78,7 @@ opciones.forEach(item => {
     opcionesActivas = opcionesActivas + 1;
   }
 });
-console.log(`Hay ${opcionesActivas} productos con al menos una opcion activa`);
+console.log(`Hay ${opcionesActivas} productos con al menos una opcion activa`); */
 
   return (
     <React.Fragment>
