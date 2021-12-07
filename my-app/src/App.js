@@ -1,13 +1,13 @@
 import './App.css';
 import React from 'react';
-const _ = require('lodash');
+import { index } from './utils/index'
 
 function App() {
 
 const productos = require('./products.json');
 const categoriaProductos = productos.results;
 
-console.log(miFuncion(categoriaProductos));
+console.log(index(categoriaProductos));
 
 
 
@@ -86,9 +86,6 @@ console.log(`Hay ${opcionesActivas} productos con al menos una opcion activa`); 
       Ingrese una categoria   
     <input type="text" name="categoriaProduct"/>
     <h3>Categorias disponibles:</h3>
-    <ol>
-      { listaRenderisada }
-    </ol>
     </React.Fragment>
   );
 }
